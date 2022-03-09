@@ -634,11 +634,27 @@
 
         for(int i = 1; i <= drawnPlayer.size(); i++)
         {
+            if(drawnPlayer[i-1].value == 1)
+            {
+            ptotal += drawnPlayer[i-1].value;
+            if(ptotal <= 11)
+            {
+                ptotal + 10;
+            }
+            } else
          ptotal += drawnPlayer[i-1].value;
         }
 
         for(int i = 1; i <= drawnOpp.size(); i++)
         {
+            if(drawnOpp[i-1].value == 1)
+            {
+            ototal += drawnOpp[i-1].value;
+            if(ototal <= 11)
+            {
+                ototal + 10;
+            }
+            } else
          ototal += drawnOpp[i-1].value;
         }
     }
@@ -840,6 +856,8 @@ int main()
 {
     srand(time(0));
     Deck deck;
+    deck.odrawn = 0;
+    deck.pdrawn = 0;
 
     deck.SetupCards();
 
